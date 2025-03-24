@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spam Classifier</title>
+</head>
+<body>
+    <h1>Email Spam Classifier</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="message" placeholder="Enter message..." required>
+        <button type="submit">Check</button>
+    </form>
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
